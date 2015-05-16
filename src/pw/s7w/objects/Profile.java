@@ -43,11 +43,16 @@ public class Profile {
             alts.add(altAccountsList);
         }
 
-        profileFile = new File (Main.get().getDataFolder() + File.separator + "users", p.getUniqueId().toString());
+        profileFile = new File(Main.get().getDataFolder() + File.separator + "users", p.getUniqueId().toString());
         if (profileFile.exists()) {
             try {
                 profileConfig = ConfigurationProvider.getProvider(YamlConfiguration.class).load(profileFile);
-                p.sendMessage(ChatColor.GREEN + "Profile loaded.");
+                try {
+                    Thread.sleep(40L);
+                    p.sendMessage(ChatColor.GREEN + "Profile loaded.");
+                }catch(InterruptedException e) {
+                    e.printStackTrace();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
                 Main.get().severe("Error loading profile for " + p.getName() + "!");
@@ -60,6 +65,7 @@ public class Profile {
                 profileConfig.set("IP.", ip);
                 profileConfig.set("IPS.", ips);
                 profileConfig.set("ALTS.", alts);
+
                 p.sendMessage(ChatColor.GREEN + "Profile created.");
             } catch (IOException e) {
                 e.printStackTrace();
