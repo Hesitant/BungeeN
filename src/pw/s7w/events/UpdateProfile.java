@@ -12,6 +12,6 @@ public class UpdateProfile implements Listener {
     @EventHandler
     public void onHandle(LoginEvent e) {
         String player = e.getConnection().getUniqueId().toString();
-
+        
     }
 }
