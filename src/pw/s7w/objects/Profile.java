@@ -36,11 +36,11 @@ public class Profile {
         ips = new ArrayList<String>();
         ipaddress = ip;
         id = p.getUniqueId();
-        for (String niggers : ipaddresses) {
-            ips.add(niggers);
+        for (String ipList : ipaddresses) {
+            ips.add(ipList);
         }
-        for (String niggersagain : altAccounts) {
-            alts.add(niggersagain);
+        for (String altAccountsList : altAccounts) {
+            alts.add(altAccountsList);
         }
 
         profileFile = new File (Main.get().getDataFolder() + File.separator + "users", p.getUniqueId().toString());
