@@ -2,6 +2,7 @@ package pw.s7w;
 
 import net.md_5.bungee.BungeeCord;
 import net.md_5.bungee.api.plugin.Plugin;
+import pw.s7w.events.UpdateProfile;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,6 +36,7 @@ public class Main extends Plugin {
 
             }
         }
+        getProxy().getPluginManager().registerListener(this, new UpdateProfile());
     }
 
     public static Main get() {
