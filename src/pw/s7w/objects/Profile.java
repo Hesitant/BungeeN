@@ -56,10 +56,10 @@ public class Profile {
             try {
                 profileFile.createNewFile();
                 profileConfig = ConfigurationProvider.getProvider(YamlConfiguration.class).load(profileFile);
-                profileConfig.set("NAME", player);
-                profileConfig.set("IP", ip);
-                profileConfig.set("IPS", ips);
-                profileConfig.set("ALTS", alts);
+                profileConfig.set("NAME.", player);
+                profileConfig.set("IP.", ip);
+                profileConfig.set("IPS.", ips);
+                profileConfig.set("ALTS.", alts);
                 p.sendMessage(ChatColor.GREEN + "Profile created.");
             } catch (IOException e) {
                 e.printStackTrace();

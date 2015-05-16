@@ -5,6 +5,9 @@ import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.LoginEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
+import pw.s7w.Main;
+
+import java.awt.*;
 
 /**
  * Created by S7W on 16/05/2015.
@@ -17,7 +20,7 @@ public class UpdateProfile implements Listener {
         ProxiedPlayer p = (ProxiedPlayer) e.getConnection();
         for(ProxiedPlayer players : ProxyServer.getInstance().getPlayers()) {
             if(players.hasPermission("network.join")) {
-                players.sendMessage(p.getName() + "§c has joined network.");
+                players.sendMessage(p.getName() + "§c has joined network. Server [" + Main.get().getProxy().getName() + "]");
             }
         }
     }
