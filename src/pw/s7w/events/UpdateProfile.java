@@ -9,9 +9,13 @@ import net.md_5.bungee.event.EventHandler;
  */
 public class UpdateProfile implements Listener {
 
+    /*
+    @Param loginevent.
+     */
+
     @EventHandler
     public void onHandle(LoginEvent e) {
         String player = e.getConnection().getUniqueId().toString();
-        
+        //lol
     }
 }
