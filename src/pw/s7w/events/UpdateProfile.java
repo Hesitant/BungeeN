@@ -13,7 +13,7 @@ public class UpdateProfile implements Listener {
 
 
     @EventHandler
-    public void onHandle(LoginEvent e) {
+    public void onHandleLogin(LoginEvent e) {
         ProxiedPlayer p = (ProxiedPlayer) e.getConnection();
         for(ProxiedPlayer players : ProxyServer.getInstance().getPlayers()) {
             if(players.hasPermission("network.join")) {
