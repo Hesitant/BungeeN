@@ -1,6 +1,7 @@
 package pw.s7w;
 
 import net.md_5.bungee.BungeeCord;
+import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.plugin.Plugin;
 import pw.s7w.events.UpdateProfile;
 import pw.s7w.managers.ProfileManager;
@@ -23,7 +24,7 @@ public class Main extends Plugin {
             getDataFolder().mkdir();
         }
 
-        File mainFile = new File(getDataFolder(), "users.yml");
+        File mainFile = new File(getDataFolder(), "users");
         if (!(mainFile.exists())) {
             mainFile.mkdir();
         }
@@ -32,6 +33,7 @@ public class Main extends Plugin {
         if (!(staffFile.exists())) {
             try {
                 staffFile.createNewFile();
+                getProxy().getConsole().sendMessage(new TextComponent("§cCreated staff.yml"));
             } catch (IOException e) {
                 e.printStackTrace();
                 severe("Error creating 'staff.yml'");
@@ -48,6 +50,7 @@ public class Main extends Plugin {
     public ProfileManager getProfileManager() {
         return pm;
     }
+
     public void log(String s) {
         BungeeCord.getInstance().getLogger().info(s);
     }
