@@ -3,6 +3,7 @@ package pw.s7w;
 import net.md_5.bungee.BungeeCord;
 import net.md_5.bungee.api.plugin.Plugin;
 import pw.s7w.events.UpdateProfile;
+import pw.s7w.managers.ProfileManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,11 +13,12 @@ import java.io.IOException;
  */
 public class Main extends Plugin {
 
-
+    private ProfileManager pm;
     private static Main instance;
+
     public void onEnable() {
         instance = this;
-
+        pm = new ProfileManager();
         if (!(getDataFolder().exists())) {
             getDataFolder().mkdir();
         }
@@ -43,6 +45,9 @@ public class Main extends Plugin {
         return instance;
     }
 
+    public ProfileManager getProfileManager() {
+        return pm;
+    }
     public void log(String s) {
         BungeeCord.getInstance().getLogger().info(s);
     }
